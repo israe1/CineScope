@@ -8,9 +8,7 @@ val tmdbApiKey: String = gradleLocalProperties(rootDir, providers)
     .getProperty("TMDB_API_KEY", "")
 android {
     namespace = "com.israelmekomou.cinescope"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.israelmekomou.cinescope"
@@ -38,6 +36,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
