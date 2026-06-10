@@ -1,11 +1,8 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
 }
-val tmdbApiKey: String = gradleLocalProperties(rootDir, providers)
-    .getProperty("TMDB_API_KEY", "")
+
 android {
     namespace = "com.israelmekomou.cinescope"
     compileSdk = 37
@@ -17,7 +14,6 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        buildConfigField("String", "TMDB_API_KEY", "\"$tmdbApiKey\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,7 +32,6 @@ android {
     }
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 }
 
